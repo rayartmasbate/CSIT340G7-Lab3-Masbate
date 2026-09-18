@@ -36,21 +36,22 @@ const Footer = (props) => {
   )
 }
 
-
 const App = () => {
   const course = 'The Life and Works of Rizal'
-  const part1 = {
-    name: 'Industry Elective 1',
-    exercises: 3
-  }
-  const part2 = {
-    name: 'Applications Development and Emerging Technologies',
-    exercises: 3
-  }
-  const part3 = {
-    name: 'Information Management 2',
-    exercises: 3
-  }
+  const parts = [
+    {
+      name: 'Industry Elective 1',
+      exercises: 3
+    },
+    {
+      name: 'Applications Development and Emerging Technologies',
+      exercises: 3
+    },
+    {
+      name: 'Information Management 2',
+      exercises: 3
+    }
+  ]
   const name = 'Masbate, Ray Art'
   const section = 'G7'
   const code = 'CSIT340'
@@ -58,10 +59,10 @@ const App = () => {
   return (
     <div>
       <Header course={course}/>
-      <Content part1={part1.name} exercises1={part1.exercises}
-               part2={part2.name} exercises2={part2.exercises}
-               part3={part3.name} exercises3={part3.exercises}/>
-      <Total exercises1={part1.exercises} exercises2={part2.exercises} exercises3={part3.exercises}/>
+      <Content part1={parts[0].name} exercises1={parts[0].exercises}
+               part2={parts[1].name} exercises2={parts[1].exercises}
+               part3={parts[2].name} exercises3={parts[2].exercises}/>
+      <Total exercises1={parts[0].exercises} exercises2={parts[1].exercises} exercises3={parts[2].exercises}/>
       <Footer name={name} code={code} section={section}/>
     </div>
   )
