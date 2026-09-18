@@ -1,21 +1,53 @@
 import React from "react"
 
-const Hello = (props) => {
+const Header = (props) => {
+  return (
+    <h1>{props.course}</h1>
+  )
+}
+
+const Content = (props) => {
   return (
     <div>
+      <p> {props.part1} {props.exercises1} </p>
+      <p> {props.part2} {props.exercises2} </p>
+      <p> {props.part3} {props.exercises3} </p>
+    </div>
+  )
+}
 
-      <p>Hello {props.name}</p>
+const Total = (props) => {
+  return (
+    <p>Number of exercises {props.exercises1 + props.exercises2 + props.exercises3}</p>
+  )
+}
+
+const Footer = (props) => {
+  return (
+    <div>
+      {props.name} - {props.code} - {props.section}
     </div>
   )
 }
 
 const App = () => {
+  const course = 'The Life and Works of Rizal'
+  const part1 = 'Industry Elective 1'
+  const exercises1 = 3
+  const part2 = 'Applications Development and Emerging Technologies'
+  const exercises2 = 3
+  const part3 = 'Information Management 2'
+  const exercises3 = 3
+  const name = 'Masbate, Ray Art'
+  const section = 'G7'
+  const code = 'CSIT340'
+
   return (
     <div>
-      <h1>Greetings</h1>
-
-      <Hello name='George' />
-      <Hello name='Daisy' />
+      <Header course={course}/>
+      <Content part1={part1} exercises1={exercises1} part2={part2} exercises2={exercises2} part3={part3} exercises3={exercises3}/>
+      <Total exercises1={exercises1} exercises2={exercises2} exercises3={exercises3}/>
+      <Footer name={name} code={code} section={section}/>
     </div>
   )
 }
