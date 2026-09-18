@@ -37,32 +37,34 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  const course = 'The Life and Works of Rizal'
-  const parts = [
-    {
-      name: 'Industry Elective 1',
-      exercises: 3
-    },
-    {
-      name: 'Applications Development and Emerging Technologies',
-      exercises: 3
-    },
-    {
-      name: 'Information Management 2',
-      exercises: 3
-    }
-  ]
+  const course = {
+    name: 'The Life and Works of Rizal',
+    parts: [
+      {
+        name: 'Industry Elective 1',
+        exercises: 3
+      },
+      {
+        name: 'Applications Development and Emerging Technologies',
+        exercises: 3
+      },
+      {
+        name: 'Information Management 2',
+        exercises: 3
+      }
+    ]
+  }
   const name = 'Masbate, Ray Art'
   const section = 'G7'
   const code = 'CSIT340'
 
   return (
     <div>
-      <Header course={course}/>
-      <Content part1={parts[0].name} exercises1={parts[0].exercises}
-               part2={parts[1].name} exercises2={parts[1].exercises}
-               part3={parts[2].name} exercises3={parts[2].exercises}/>
-      <Total exercises1={parts[0].exercises} exercises2={parts[1].exercises} exercises3={parts[2].exercises}/>
+      <Header course={course.name}/>
+      <Content part1={course.parts[0].name} exercises1={course.parts[0].exercises}
+               part2={course.parts[1].name} exercises2={course.parts[1].exercises}
+               part3={course.parts[2].name} exercises3={course.parts[2].exercises}/>
+      <Total exercises1={course.parts[0].exercises} exercises2={course.parts[1].exercises} exercises3={course.parts[2].exercises}/>
       <Footer name={name} code={code} section={section}/>
     </div>
   )
